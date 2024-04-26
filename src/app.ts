@@ -1,8 +1,9 @@
+import MessageResponse from './interfaces/MessageResponse';
 import express from "express";
 
 const app = express();
 
-app.get("/", (req, res) => {
+app.get<{}, MessageResponse>("/", (req, res) => {
     res.json({
         message: "Hi"
     });
